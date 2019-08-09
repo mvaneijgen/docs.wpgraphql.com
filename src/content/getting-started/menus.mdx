@@ -58,6 +58,7 @@ The `menus` query is the only query that will return all of the menus on your si
 After running the `menus` query grab one of the IDs in the response and use it in the other queries below.
 
 ### Menu
+Get all menuItems based on the ID of the menu
 
 <GraphiQL withDocs={true} query='
   query GET_MENU( $id: ID! ){
@@ -91,7 +92,8 @@ After running the `menus` query grab one of the IDs in the response and use it i
 
 
 
-### Menu Item
+### Menu Item based on ID
+Get a specific menu item based on its ID
 
  <GraphiQL withDocs={true} query='
      query GET_MENU_ITEM( $id: ID! ){
@@ -114,7 +116,8 @@ After running the `menus` query grab one of the IDs in the response and use it i
     }}
     />
 
-### Menu Items
+### Menu Items (based on display location)
+If you've registered a custom display location for your menus with the [register_nav_menus()](https://codex.wordpress.org/Function_Reference/register_nav_menus) function. You can get that specific menu using the slug (key) of the registered location. As example below we've used `PRIMARY`, this must be in all upper case.
 
 <GraphiQL withDocs={true} query='{
   menuItems(where: {location: PRIMARY}){
